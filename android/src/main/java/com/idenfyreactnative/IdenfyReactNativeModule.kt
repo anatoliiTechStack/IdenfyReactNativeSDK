@@ -1,9 +1,13 @@
 package com.idenfyreactnative
 
+import android.graphics.Color
 import com.facebook.react.bridge.*
 import com.idenfy.idenfySdk.CoreSdkInitialization.IdenfyController
 import com.idenfy.idenfySdk.api.initialization.IdenfySettingsV2.IdenfyBuilderV2
 import com.idenfy.idenfySdk.faceauthentication.api.FaceAuthenticationInitialization
+import com.idenfy.idenfySdk.api.ui.IdenfyCommonColors
+import com.idenfy.idenfySdk.api.ui.IdenfyToolbarUISettingsV2
+import com.idenfy.idenfySdk.api.ui.IdenfyPhotoResultViewUISettingsV2
 import com.idenfyreactnative.di.DIProvider
 import com.idenfyreactnative.domain.IdenfyReactNativeCallbacksUseCase
 import com.idenfyreactnative.domain.IdenfySdkActivityEventListener
@@ -50,6 +54,25 @@ class IdenfyReactNativeModule(reactContext: ReactApplicationContext) :
       val authToken = GetSdkDataFromConfig.getSdkTokenFromConfig(config)
       val idenfySettingsV2 = GetSdkDataFromConfig.getIdenfySettingsFromConfig(config)
       idenfySettingsV2.authToken = authToken
+
+      val idenfyColorMain = "#003188"
+      val idenfyColorButton = "#003188"
+
+      IdenfyCommonColors.idenfyMainColorV2 = Color.parseColor(idenfyColorMain)
+      IdenfyCommonColors.idenfyMainDarkerColorV2 = Color.parseColor(idenfyColorMain)
+      IdenfyCommonColors.idenfyGradientColor1V2 = Color.parseColor(idenfyColorButton)
+      IdenfyCommonColors.idenfyGradientColor2V2 = Color.parseColor(idenfyColorButton)
+
+      IdenfyToolbarUISettingsV2.idenfyDefaultToolbarBackgroundColor = Color.parseColor(idenfyColorMain)
+
+      IdenfyToolbarUISettingsV2.idenfyDefaultToolbarBackIconTintColor = IdenfyCommonColors.idenfyBlack
+      IdenfyToolbarUISettingsV2.idenfyDefaultToolbarLogoIconTintColor = IdenfyCommonColors.idenfyBlack
+
+      IdenfyToolbarUISettingsV2.idenfyLanguageSelectionToolbarLanguageSelectionIconTintColor = IdenfyCommonColors.idenfyBlack
+      IdenfyToolbarUISettingsV2.idenfyLanguageSelectionToolbarCloseIconTintColor = IdenfyCommonColors.idenfyBlack
+
+      IdenfyCommonColors.idenfyPhotoResultDetailsCardBackgroundColorV2 = Color.parseColor("#003188")
+      IdenfyPhotoResultViewUISettingsV2.idenfyPhotoResultViewDetailsCardTitleColor = Color.parseColor(idenfyColorButton)
 
       IdenfyController.getInstance().initializeIdenfySDKV2WithManual(
         currentActivity,

@@ -26,6 +26,29 @@ class IdenfyReactNative: NSObject {
         do {
             let authToken = GetSdkConfig.getAuthToken(config: config)
             let idenfySettingsV2 = GetSdkConfig.getIdenfySettingsFromConfig(config: config, authToken: authToken)
+
+            let idenfyColorMain = "#003188"
+            let idenfyColorButton = "#003188"
+
+            IdenfyCommonColors.idenfyMainColorV2 = UIColor(hexString: idenfyColorMain)
+            IdenfyCommonColors.idenfyMainDarkerColorV2 = UIColor(hexString: idenfyColorMain)
+            IdenfyCommonColors.idenfyGradientColor1V2 = UIColor(hexString: idenfyColorButton)
+            IdenfyCommonColors.idenfyGradientColor2V2 = UIColor(hexString: idenfyColorButton)
+
+            IdenfyToolbarUISettingsV2.idenfyDefaultToolbarBackgroundColor = UIColor(hexString: idenfyColorMain)
+
+            IdenfyToolbarUISettingsV2.idenfyDefaultToolbarBackIconTintColor = IdenfyCommonColors.idenfyBlack
+            IdenfyToolbarUISettingsV2.idenfyDefaultToolbarLogoIconTintColor = IdenfyCommonColors.idenfyBlack
+
+            IdenfyToolbarUISettingsV2.idenfyLanguageSelectionToolbarLanguageSelectionIconTintColor  = IdenfyCommonColors.idenfyBlack
+            IdenfyToolbarUISettingsV2.idenfyLanguageSelectionToolbarCloseIconTintColor = IdenfyCommonColors.idenfyBlack
+
+            IdenfyCommonColors.idenfyPhotoResultDetailsCardBackgroundColorV2 = UIColor(hexString: "#003188")
+            IdenfyPhotoResultViewUISettingsV2.idenfyPhotoResultViewDetailsCardTitleColor = UIColor(hexString: idenfyColorButton)
+
+            let idenfyViewsV2:IdenfyViewsV2 = IdenfyViewsBuilderV2()
+                .withCountryCellView(CountryCell.self)
+                .build()
             
             let idenfyController = IdenfyController.shared
             idenfyController.initializeIdenfySDKV2WithManual(idenfySettingsV2: idenfySettingsV2)
