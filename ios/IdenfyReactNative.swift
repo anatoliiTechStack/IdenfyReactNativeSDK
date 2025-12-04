@@ -1,5 +1,6 @@
 import Foundation
 import iDenfySDK
+import idenfyviews
 @objc(IdenfyReactNative)
 class IdenfyReactNative: NSObject {
     
