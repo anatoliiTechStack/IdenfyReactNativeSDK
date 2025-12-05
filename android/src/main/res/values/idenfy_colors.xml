@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Idenfy SDK Color Customization -->
+    <!-- Main colors used throughout the SDK -->
+    <color name="idenfyMainColorV2">#003188</color>
+    <color name="idenfyMainDarkerColorV2">#003188</color>
+    <color name="idenfyGradientColor1V2">#003188</color>
+    <color name="idenfyGradientColor2V2">#003188</color>
+    
+    <!-- Background color -->
+    <color name="idenfyBackgroundColorV2">#FBFBFB</color>
+    
+    <!-- Text color -->
+    <color name="idenfySecondColorV2">#F2353B4E</color>
+    
+    <!-- Photo result details card background -->
+    <color name="idenfyPhotoResultDetailsCardBackgroundColorV2">#003188</color>
+</resources>
+
